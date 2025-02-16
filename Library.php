@@ -28,9 +28,9 @@ class Library extends Settings {
 
     private function configUri() {
         $URI = explode('/', $_SERVER['REQUEST_URI']);
-        $modul = $URI[1];
-        $class = $URI[2];
-        $function = $URI[3];
+        $modul = $URI[0];
+        $class = $URI[1];
+        $function = $URI[2];
 
         $config = '/'.$class.'/'.$function;
         return $config;

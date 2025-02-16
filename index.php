@@ -20,9 +20,9 @@ spl_autoload_register(function ($classname) {
  * Function API = URI ke 3
  */
 $URI = explode('/', $_SERVER['REQUEST_URI']);
-$__NAME_API__ = $URI[1];
-$__CLASS_API__ = $URI[2];
-$__FUNCTION_API__ = $URI[3];
+$__NAME_API__ = $URI[0];
+$__CLASS_API__ = $URI[1];
+$__FUNCTION_API__ = $URI[2];
 
 /**
  * Running API
