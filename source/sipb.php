@@ -54,4 +54,10 @@ class sipb extends Library {
             return $response->withJson($result, 200);
         });
     }
+
+    private function test() {
+        $this->app->get($this->pattern . "", function (Request $request, Response $response) {
+            return "OK";
+        });
+    }
 }
