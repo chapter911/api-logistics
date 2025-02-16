@@ -12,7 +12,7 @@ class sipb extends Library {
     }
 
     private function search() {
-        $this->app->get($this->pattern, function (Request $request, Response $response) {
+        $this->app->post($this->pattern, function (Request $request, Response $response) {
             $value_data = $request->getParsedBody();
             $no_spj = $value_data['no_spj'];
 
