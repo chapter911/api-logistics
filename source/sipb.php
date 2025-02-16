@@ -14,12 +14,12 @@ class sipb extends Library {
     private function search() {
         $this->app->post($this->pattern, function (Request $request, Response $response) {
             $value_data = $request->getParsedBody();
-            $no_sipb = $value_data['no_sipb'];
+            $no_spj = $value_data['no_spj'];
 
-            $sql = "SELECT * FROM vw_sipb_hdr WHERE no_sipb = '$no_sipb'";
+            $sql = "SELECT * FROM vw_sipb_hdr WHERE no_spj = '$no_spj'";
             $fetch = $this->db->query($sql)->fetchAll();
             if ($fetch) {
-                $material = $this->db->query("SELECT * FROM vw_sipb_dtl WHERE no_sipb = '$no_sipb'")->fetchAll();
+                $material = $this->db->query("SELECT * FROM vw_sipb_dtl WHERE no_spj = '$no_spj'")->fetchAll();
                 $result['status']  = "success";
                 $result['message'] = "berhasil mendapatkan data";
                 $result['data']['header']    = $fetch;
